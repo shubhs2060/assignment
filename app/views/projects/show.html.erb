@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @project.description %>
+</p>
+
+<p>
+  <strong>Users</strong>
+  <% @project.users.each do |user| %>
+  	<%= user.email %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @project.status %>
+</p>
+
+<%= link_to 'Change Status', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
